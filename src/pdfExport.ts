@@ -67,11 +67,11 @@ export async function generatePdf(data: InvoiceData): Promise<Uint8Array> {
 
   // Meta row labels
   const metaY = H - 142;
-  text('D A T E :', 44, metaY, { size: 7, font: fontBold, color: gray });
-  text(fmtDate(data.invoiceDate), 44, metaY - 12, { size: 10, font: fontBold });
-
   text('I N V O I C E   N U M B E R :', 200, metaY, { size: 7, font: fontBold, color: gray });
   text(data.invoiceNumber, 200, metaY - 12, { size: 10, font: fontBold });
+
+  text('D A T E :', 44, metaY, { size: 7, font: fontBold, color: gray });
+  text(fmtDate(data.invoiceDate), 44, metaY - 12, { size: 10, font: fontBold });
 
   text('D U E   D A T E :', 410, metaY, { size: 7, font: fontBold, color: gray });
   text(fmtDate(data.dueDate), 410, metaY - 12, { size: 10, font: fontBold });

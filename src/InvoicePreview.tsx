@@ -44,12 +44,12 @@ export default function InvoicePreview({ data }: Props) {
         {/* Meta row */}
         <div className="meta-row">
           <div className="meta-item">
-            <span className="meta-label">D A T E :</span>
-            <span className="meta-value">{fmtDate(data.invoiceDate)}</span>
-          </div>
-          <div className="meta-item">
             <span className="meta-label">I N V O I C E &nbsp; N U M B E R :</span>
             <span className="meta-value">{data.invoiceNumber || '—'}</span>
+          </div>
+          <div className="meta-item">
+            <span className="meta-label">D A T E :</span>
+            <span className="meta-value">{fmtDate(data.invoiceDate)}</span>
           </div>
           <div className="meta-item">
             <span className="meta-label">D U E &nbsp; D A T E :</span>
