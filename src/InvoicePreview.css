@@ -1,0 +1,251 @@
+.preview-panel {
+  flex: 1;
+  min-width: 0;
+  background: #e5e7eb;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.invoice-page {
+  position: relative;
+  width: 595px;
+  min-height: 842px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 48px 40px 36px 56px;
+  font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+  font-size: 11px;
+  color: #222;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/* Left accent bar */
+.accent-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 10px;
+  background: #2d2d2d;
+}
+
+/* Title */
+.inv-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 10px;
+  margin: 0 0 28px 0;
+  color: #111;
+}
+
+/* Meta row */
+.meta-row {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #111;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-label {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.meta-value {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Addresses */
+.address-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.address-block { flex: 1; }
+.address-block.right { text-align: right; }
+
+.addr-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #555;
+  margin: 0 0 4px 0;
+}
+
+.addr-value {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.addr-multiline { white-space: pre-line; }
+
+/* Subject */
+.towards-row {
+  margin-bottom: 16px;
+}
+
+.towards-text {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Items table */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+
+.items-table thead {
+  background: #2d2d2d;
+  color: #fff;
+}
+
+.items-table th {
+  padding: 6px 8px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.items-table td {
+  padding: 8px 8px;
+  font-size: 10px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.t-no   { width: 36px; }
+.t-qty  { width: 36px; }
+.t-desc { }
+.t-price { width: 72px; text-align: right; }
+.t-total { width: 80px; text-align: right; }
+
+.items-table th.t-price,
+.items-table th.t-total {
+  text-align: right;
+}
+
+/* Totals */
+.totals-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-bottom: 28px;
+  padding-top: 6px;
+}
+
+.totals-line {
+  display: flex;
+  gap: 24px;
+  font-size: 10px;
+  min-width: 240px;
+  justify-content: space-between;
+}
+
+.totals-label {
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 9px;
+  color: #555;
+}
+
+.total-final {
+  font-weight: 700;
+  font-size: 13px;
+  padding-top: 6px;
+  border-top: 2px solid #111;
+  margin-top: 4px;
+}
+
+.total-value {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* Account */
+.account-section {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #555;
+  margin: 0 0 8px 0;
+}
+
+.account-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-col p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.account-col.right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.qr-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.qr-img {
+  width: 80px;
+  height: 80px;
+}
+
+.qr-label {
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+.signoff-name {
+  font-weight: 600;
+  font-size: 11px;
+}
+
+/* Footer */
+.footer-note {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #555;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
