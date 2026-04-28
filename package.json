@@ -12,7 +12,8 @@
   "dependencies": {
     "qrcode": "^1.5.4",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "pdf-lib": "^1.17.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
