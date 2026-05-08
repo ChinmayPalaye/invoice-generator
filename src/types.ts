@@ -102,6 +102,11 @@ export function calcTotal(items: LineItem[], charges: ExtraCharge[]): number {
   return calcSubtotal(items) + calcExtraTotal(charges);
 }
 
+export function getUpiUrl(data: InvoiceData): string {
+  const total = calcTotal(data.items, data.extraCharges);
+  return `upi://pay?pa=${encodeURIComponent(data.upiId)}&cu=${data.currency}&tn=${data.invoiceTowards}&am=${total}`;
+}
+
 export function formatCurrency(amount: number, symbol: string): string {
   const abs = Math.abs(amount);
   const formatted = abs.toLocaleString('en-IN', {

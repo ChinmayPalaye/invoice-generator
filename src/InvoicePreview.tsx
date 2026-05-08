@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import QRCode from 'qrcode';
-import { type InvoiceData, calcSubtotal, calcTotal, formatCurrency } from './types';
+import { type InvoiceData, calcSubtotal, calcTotal, formatCurrency, getUpiUrl } from './types';
 import './InvoicePreview.css';
 
 interface Props {
@@ -26,11 +26,11 @@ export default function InvoicePreview({ data }: Props) {
       setQrDataUrl(null);
       return;
     }
-    const upiUrl = `upi://pay?pa=${encodeURIComponent(data.upiId)}&cu=${data.currency}`;
+    const upiUrl = getUpiUrl(data);
     QRCode.toDataURL(upiUrl, { width: 90, margin: 1 })
       .then(setQrDataUrl)
       .catch(() => setQrDataUrl(null));
-  }, [data.upiId, data.currency]);
+  }, [data.upiId, data.currency, data.invoiceTowards, total]);
 
   return (
     <div className="preview-panel">

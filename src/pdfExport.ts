@@ -1,6 +1,6 @@
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 import QRCode from 'qrcode';
-import { type InvoiceData, calcSubtotal, calcTotal } from './types';
+import { type InvoiceData, calcSubtotal, calcTotal, getUpiUrl } from './types';
 
 // WinAnsi-safe currency symbols for PDF standard fonts
 const PDF_CURRENCY_MAP: Record<string, string> = {
@@ -139,9 +139,10 @@ export async function generatePdf(data: InvoiceData): Promise<Uint8Array> {
 
   // Total
   rowY -= 8;
+  const total = calcTotal(data.items, data.extraCharges);
   page.drawRectangle({ x: 300, y: rowY + 14, width: W - 336, height: 1.5, color: black });
   text('T O T A L   A M O U N T :', 310, rowY, { size: 9, font: fontBold, color: gray });
-  text(`${pdfCurrency(calcTotal(data.items, data.extraCharges), sym)}/-`, 470, rowY, {
+  text(`${pdfCurrency(total, sym)}/-`, 470, rowY, {
     size: 13,
     font: fontBold,
   });
@@ -160,7 +161,7 @@ export async function generatePdf(data: InvoiceData): Promise<Uint8Array> {
 
   // QR Code for UPI
   if (data.upiId) {
-    const upiUrl = `upi://pay?pa=${encodeURIComponent(data.upiId)}&cu=${data.currency}`;
+    const upiUrl = getUpiUrl(data);
     try {
       const qrDataUrl = await QRCode.toDataURL(upiUrl, { width: 200, margin: 1 });
       const qrImageBytes = Uint8Array.from(atob(qrDataUrl.split(',')[1]), c => c.charCodeAt(0));
