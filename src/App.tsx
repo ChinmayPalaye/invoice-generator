@@ -92,6 +92,12 @@ export default function App() {
         errors={errors}
       />
       <InvoicePreview data={data} />
+      <footer className="app-footer">
+        <a href="https://github.com/ChinmayPalaye/invoice-generator" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.simpleicons.org/github" alt="" width="14" height="14" style={{verticalAlign: 'middle', marginRight: 4}} />
+          GitHub
+        </a>
+      </footer>
     </div>
   );
 }
