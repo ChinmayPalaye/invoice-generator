@@ -1,5 +1,5 @@
 {
-  "name": "invoice-app",
+  "name": "invoice-generator",
   "private": true,
   "version": "0.0.0",
   "type": "module",

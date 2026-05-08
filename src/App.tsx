@@ -5,7 +5,7 @@ import InvoicePreview from './InvoicePreview';
 import { generatePdf, downloadPdf } from './pdfExport';
 import './App.css';
 
-const LS_KEY = 'invoice-app-draft';
+const LS_KEY = 'invoice-generator-draft';
 
 function loadDraft(): InvoiceData {
   try {
